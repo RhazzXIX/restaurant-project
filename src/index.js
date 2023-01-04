@@ -1,12 +1,82 @@
-const testText = document.querySelector('div#content');
-testText.textContent = 'Click me!';
+import './css/style.css'
+import GitHub from './images/GitHub-Mark-Light-64px.png'
+import HeroImage from './images/coffee-with-milk-gb7de7cf1f_1920.jpg'
 
-testText.addEventListener('click', (e) => {
-  e.stopPropagation();
-  if (testText.textContent === 'Click me!') {
-    testText.textContent = 'Hello Up-Skilling World!';
-  } else {
-    console.log('test');
-    testText.textContent = 'Click me!';
+const baseDOM = (function () {
+  const body = document.querySelector("body");
+
+  // Main Header //
+  const header = document.createElement("header");
+  // const h1 = document.createElement("h1");
+  const nav = document.createElement('nav');
+  const navUl = document.createElement('ul');
+  const btnList = []
+  for (let i = 0; i <= 3; i += 1 ) {
+    const navLi = document.createElement('li');
+    const navBtn = document.createElement('button');
+
+    switch (i) {
+      case 0: 
+        navBtn.textContent = "Home";
+        navBtn.setAttribute('id', 'home');
+        navLi.appendChild(navBtn);
+        break;
+      case 1: 
+        navBtn.textContent = "Menu";
+        navBtn.setAttribute('id', 'menu');
+        navLi.appendChild(navBtn);
+        break;
+      case 2: 
+        navBtn.textContent = "About";
+        navBtn.setAttribute('id', 'about');
+        navLi.appendChild(navBtn);
+        break;
+      default: 
+        navBtn.textContent = "Credits";
+        navBtn.setAttribute('id', 'credit');
+        navLi.appendChild(navBtn);
+        break;
+    }
+    btnList.push(navLi)
+    navUl.appendChild(navLi);
   }
-});
+
+  // h1.textContent = 'Bread & Butter Cafe'
+  nav.appendChild(navUl);
+  // header.appendChild(h1);
+  header.appendChild(nav);
+  body.appendChild(header);
+
+  // Main Content //
+
+  const main = document.createElement('main')
+  main.setAttribute('id', 'content');
+
+  body.appendChild(main);
+
+  // Main Footer //
+  const footer = document.createElement('footer')
+  const gitLink = document.createElement('a')
+  gitLink.setAttribute('href', 'https://github.com/RhazzXIX')
+  const github = new Image();
+  github.src = GitHub;
+
+  gitLink.appendChild(github);
+  footer.appendChild(gitLink);
+
+
+  body.appendChild(footer);
+
+
+  return {main, btnList}
+
+})();
+
+const homeContent = (function () {
+  const heroImage = new Image();
+  heroImage.src = HeroImage;
+  heroImage.classList.add('hero-image');
+  baseDOM.main.appendChild(heroImage);
+  
+
+})() ;

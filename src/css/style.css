@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 80px 1fr 80px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0E0504;
+}
+
+header{
+  display: flex;
+}
+nav {
+  display: flex;
+  width: 100%;
+}
+
+header h1 {
+  font-family: 'Sevillana', 'Times New Roman';
+  font-style: italic;
+  color: burlywood;
+}
+
+header
+nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+header
+nav ul 
+li button {
+  appearance: none;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom: none;
+  background-color: #0E0504;
+  color: white;
+  padding: 6px 12px;
+  width: 100%;
+  font-size: 1.1rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-weight: 600;
+}
+
+header
+nav ul li 
+button:hover {
+  text-shadow: 3px 3px 16px white;
+}
+
+header
+nav ul li 
+button:active {
+  background-color: aliceblue;
+  color: #0E0504;
+  border-top: 2px solid grey;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+}
+
+main#content {
+  background-color: #4B1F0E;
+}
+
+main#content
+img.hero-image {
+  width: 480px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+footer a 
+img{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+}
+
+footer a 
+img:hover {
+  box-shadow: 0.5px 0.5px 12px white;
+}
