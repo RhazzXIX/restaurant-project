@@ -1,2 +1,2 @@
 # restaurant-project
-Full Stack Javascipt project #4
+Full Stack JavaScript project #4

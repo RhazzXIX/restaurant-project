@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules/
+
+#ESlint and Prettier
+.eslintrc.json
+.prettierrc.json
+
+#Vscode
+.vscode/
