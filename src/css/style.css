@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passions+Conflict&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 3px solid white; */
 }
 :root {
   font-family: 'Times New Roman', Times, serif;
@@ -23,6 +24,7 @@ body {
   grid-template-rows: 80px 1fr 80px;
   height: 100vh;
   width: 100vw;
+  min-width: 1040px;
   background-color: #0E0504;
 }
 
@@ -34,18 +36,15 @@ nav {
   width: 100%;
 }
 
-header h1 {
-  font-family: 'Sevillana', 'Times New Roman';
-  font-style: italic;
-  color: burlywood;
-}
 
 header
 nav ul {
   width: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-end;
+  gap: 54px;
 }
 
 header
@@ -83,12 +82,49 @@ button:active {
 }
 
 main#content {
+  min-height: 744px;
   background-color: #4B1F0E;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 44px 52px;
 }
 
 main#content
+section#home {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: auto;
+  min-width: 1020px;
+  column-gap: 52px;
+  align-items: center;
+  justify-items: center;
+}
+
+main#content
+section#home
 img.hero-image {
-  width: 480px;
+  width: max(480px, 66%);
+  border: 4px solid #BE7656;
+  border-radius: 80px 14px;
+}
+
+section#home
+h2 {
+  color: #EFC3A4;
+  font-family: 'Passions Conflict', 'Times New Roman';
+  font-style: italic;
+  font-size: 5.5rem;
+  font-weight: 400;
+}
+
+section#home
+p {
+  color: #EFC3A4;
+  font-size: 1.4rem;
+  grid-column: 1 / -1;
+  width: 700px
 }
 
 footer {
@@ -105,10 +141,11 @@ footer a
 img{
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 footer a 
 img:hover {
-  box-shadow: 0.5px 0.5px 12px white;
+  /* box-shadow: 0.5px 0.5px 12px white; */
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(252deg) brightness(104%) contrast(100%) drop-shadow(0 0 0.75rem white);
 }
