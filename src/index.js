@@ -1,6 +1,7 @@
 import "./css/style.css";
 import GitHub from "./images/GitHub-Mark-Light-64px.png";
 import HeroImage from "./images/bread-coffee.jpg";
+import menuContent from "./scripts/menu";
 
 const baseDOM = (function () {
   const body = document.querySelector("body");
@@ -90,4 +91,28 @@ const homeContent = (function () {
   homeSection.appendChild(heroImage);
   homeSection.appendChild(subHero);
   baseDOM.main.appendChild(homeSection);
+  return { homeSection };
+})();
+
+const bindEvents = (function () {
+  baseDOM.btnList[0].addEventListener("click", (e) => {
+    e.stopPropagation();
+    const element = baseDOM.main.querySelector("section");
+    if (Boolean(element)) {
+      if (element !== homeContent.homeSection) {
+        baseDOM.main.removeChild(element);
+        baseDOM.main.appendChild(homeContent.homeSection);
+      }
+    }
+  });
+  baseDOM.btnList[1].addEventListener("click", (e) => {
+    e.stopPropagation();
+    const element = baseDOM.main.querySelector("section");
+    if (Boolean(element)) {
+      if (element !== menuContent.menuSection) {
+        baseDOM.main.removeChild(element);
+        baseDOM.main.appendChild(menuContent.menuSection);
+      }
+    }
+  });
 })();

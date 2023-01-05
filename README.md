@@ -3,5 +3,10 @@ Full Stack JavaScript project #4
 
 
 
-Bread butter and coffee image
+images are from
+
+JuAnnun
 https://pixabay.com/users/juannun-5716625/
+
+Miti
+https://unsplash.com/@mitifotos
