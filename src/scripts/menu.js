@@ -1,4 +1,3 @@
-// import board from '../images/menu-board.jpg'
 
 const menuContent = (function () {
   const menuSection = document.createElement("section");

@@ -2,6 +2,7 @@ import "./css/style.css";
 import GitHub from "./images/GitHub-Mark-Light-64px.png";
 import HeroImage from "./images/bread-coffee.jpg";
 import menuContent from "./scripts/menu";
+import contactContent from "./scripts/contact";
 
 const baseDOM = (function () {
   const body = document.querySelector("body");
@@ -28,7 +29,7 @@ const baseDOM = (function () {
         navLi.appendChild(navBtn);
         break;
       case 2:
-        navBtn.textContent = "About";
+        navBtn.textContent = "Contact";
         navBtn.setAttribute("id", "about");
         navLi.appendChild(navBtn);
         break;
@@ -83,8 +84,8 @@ const homeContent = (function () {
   heroImage.setAttribute("alt", "Toast Bread and Coffee");
 
   const subHero = document.createElement("p");
-  subHero.innerHTML = `Established in 1920's, <em>Bread & Butter Cafe</em> has been serving 
-    people delicious food made from <em>high quality</em> ingredients. Supporting domestic
+  subHero.innerHTML = `Established in 1920's, <em>Bread & Butter Cafe</em> has been the home 
+    for people, who is looking for <em>delightful</em> food made from <strong>high quality</strong> ingredients. Supports domestic
     farmers through sourcing local produce directly from them.`;
 
   homeSection.appendChild(heroText);
@@ -93,6 +94,7 @@ const homeContent = (function () {
   baseDOM.main.appendChild(homeSection);
   return { homeSection };
 })();
+
 
 const bindEvents = (function () {
   baseDOM.btnList[0].addEventListener("click", (e) => {
@@ -115,4 +117,15 @@ const bindEvents = (function () {
       }
     }
   });
+  baseDOM.btnList[2].addEventListener("click", (e) => {
+    e.stopPropagation();
+    const element = baseDOM.main.querySelector("section");
+    if (Boolean(element)) {
+      if (element !== contactContent.contactSection) {
+        baseDOM.main.removeChild(element);
+        baseDOM.main.appendChild(contactContent.contactSection);
+      }
+    }
+  });
+
 })();
