@@ -3,13 +3,13 @@ import GitHub from "./images/GitHub-Mark-Light-64px.png";
 import HeroImage from "./images/bread-coffee.jpg";
 import menuContent from "./scripts/menu";
 import contactContent from "./scripts/contact";
+import creditsContent from "./scripts/credits";
 
 const baseDOM = (function () {
   const body = document.querySelector("body");
 
   // Main Header //
   const header = document.createElement("header");
-  // const h1 = document.createElement("h1");
   const nav = document.createElement("nav");
   const navUl = document.createElement("ul");
   const btnList = [];
@@ -85,8 +85,8 @@ const homeContent = (function () {
 
   const subHero = document.createElement("p");
   subHero.innerHTML = `Established in 1920's, <em>Bread & Butter Cafe</em> has been the home 
-    for people, who is looking for <em>delightful</em> food made from <strong>high quality</strong> ingredients. Supports domestic
-    farmers through sourcing local produce directly from them.`;
+    for people, who is looking for <em>delightful</em> foods made from <strong>high quality</strong> ingredients. Supports domestic
+    farmers, through sourcing local produce directly from them.`;
 
   homeSection.appendChild(heroText);
   homeSection.appendChild(heroImage);
@@ -127,5 +127,14 @@ const bindEvents = (function () {
       }
     }
   });
-
+  baseDOM.btnList[3].addEventListener("click", (e) => {
+    e.stopPropagation();
+    const element = baseDOM.main.querySelector("section");
+    if (Boolean(element)) {
+      if (element !== creditsContent.creditsSection) {
+        baseDOM.main.removeChild(element);
+        baseDOM.main.appendChild(creditsContent.creditsSection);
+      }
+    }
+  });
 })();
